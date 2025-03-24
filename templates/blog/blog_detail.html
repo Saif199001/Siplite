@@ -1,0 +1,42 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block title %}{{ blog.title }} - Blog Details{% endblock %}
+
+{% block page_content %}
+<div class="container py-5">
+    <div class="blog-detail">
+        <!-- Blog Image -->
+        <div class="blog-image">
+            <img src="{{ blog.image.url }}" class="img-fluid" alt="{{ blog.title }}">
+        </div>
+
+        <!-- Blog Content -->
+        <h1 class="mt-4">{{ blog.title }}</h1>
+        <p class="text-muted">By {{ blog.author }} | {{ blog.created_at|date:"F d, Y" }}</p>
+        <div class="blog-content">
+            {{ blog.content|safe }}
+        </div>
+    </div>
+
+    <!-- Related Blogs Section -->
+    <div class="related-blogs mt-5">
+        <h3>Related Posts</h3>
+        <div class="row row-cols-md-3 row-cols-1 g-4">
+            {% for related_blog in related_blogs %}
+            <div class="col">
+                <div class="card blog-card shadow-sm">
+                    <img src="{{ related_blog.image.url }}" class="card-img-top" alt="{{ related_blog.title }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ related_blog.title }}</h5>
+                        <p class="card-text">{{ related_blog.content|truncatewords:15 }}</p>
+                        <a href="{% url 'blog_detail' slug=related_blog.slug %}" class="btn btn-outline-success">Read More</a>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <p class="text-muted">No related blogs found.</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

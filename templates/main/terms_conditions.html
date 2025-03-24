@@ -1,0 +1,55 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block title %}Terms & Conditions - Siplite Natural Teas{% endblock %}
+
+{% block page_content %}
+<div class="container py-5 terms-container">
+    <h1 class="text-center">Terms & Conditions</h1>
+    <p class="text-center text-muted">Last updated: March 2025</p>
+
+    <section>
+        <h2>1. Introduction</h2>
+        <p>Welcome to Siplite Natural Teas. By using our website, you agree to comply with these Terms & Conditions. Please read them carefully.</p>
+    </section>
+
+    <section>
+        <h2>2. Use of Our Website</h2>
+        <p>You must be at least 18 years old to use our website. You agree not to misuse our services or violate any applicable laws.</p>
+    </section>
+
+    <section>
+        <h2>3. Product Information</h2>
+        <p>We strive to provide accurate product descriptions, but we do not guarantee that product details are always 100% accurate or error-free.</p>
+    </section>
+
+    <section>
+        <h2>4. Payments & Pricing</h2>
+        <p>All payments are processed securely. Prices are subject to change without notice. We reserve the right to cancel any order due to pricing errors.</p>
+    </section>
+
+    <section>
+        <h2>5. Shipping & Returns</h2>
+        <p>Orders are processed within 2-5 business days. Refunds are only applicable under specific conditions. Refer to our Refund Policy for details.</p>
+    </section>
+
+    <section>
+        <h2>6. Intellectual Property</h2>
+        <p>All content on this site, including images, logos, and text, is the property of Siplite Natural Teas and may not be used without permission.</p>
+    </section>
+
+    <section>
+        <h2>7. Limitation of Liability</h2>
+        <p>We are not liable for indirect or incidental damages resulting from the use of our website or products.</p>
+    </section>
+
+    <section>
+        <h2>8. Changes to Terms</h2>
+        <p>We reserve the right to update these terms at any time. Continued use of our site constitutes acceptance of the revised terms.</p>
+    </section>
+
+    <section>
+        <h2>9. Contact Us</h2>
+        <p>If you have any questions regarding these Terms & Conditions, please contact us at <a href="{% url 'contact' %}">our Contact Page</a>.</p>
+    </section>
+</div>
+{% endblock %}

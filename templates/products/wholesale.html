@@ -1,0 +1,34 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block title %}Wholesale Tea | Siplite Natural Teas{% endblock %}
+
+{% block page_content %}
+<section class="container py-5">
+    <h2 class="text-center mb-4">Wholesale Tea Categories</h2>
+
+    {% if category_products %}
+        {% for category, products in category_products.items %}
+        <div class="mb-5">
+            <h3 class="text-success">{{ category.name }}</h3>
+            <div class="row row-cols-md-3 row-cols-1 g-4">
+                {% for product in products %}
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                            <p class="card-text">Wholesale Price: ₹{{ product.wholesale_price }}</p>
+                            <p class="text-muted">Min Order: {{ product.minimum_order_quantity }} units</p>
+                            <a href="{% url 'contact' %}" class="btn btn-success">Inquire Now</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p class="text-center text-muted">No wholesale products available. Please <a href="{% url 'contact' %}">contact us</a> for inquiries.</p>
+    {% endif %}
+</section>
+{% endblock %}

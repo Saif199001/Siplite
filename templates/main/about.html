@@ -1,0 +1,64 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block title %}About Us - Siplite Natural Teas{% endblock %}
+
+{% block page_content %}
+<div class="about-container">
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <h1>About Siplite Natural Teas</h1>
+        <p>Bringing you the finest, 100% natural tea from India's lush gardens.</p>
+    </section>
+
+    <!-- Company Info -->
+    <section class="about-info">
+        <div class="about-content">
+            <h2>Our Story</h2>
+            <p>Siplite Natural Teas was founded with a passion for pure, high-quality tea. Our journey started in the heart of India's tea estates, where we carefully source premium leaves to bring you the perfect cup.</p>
+            <p>Our teas are organically grown and crafted with sustainability in mind. We believe in ethical sourcing, supporting local farmers, and delivering exceptional flavors.</p>
+        </div>
+        <div class="about-image">
+            <img src="{% static 'images/tea_farm.jpg' %}" alt="Tea Farm">
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="about-values">
+        <h2>Our Mission & Vision</h2>
+        <div class="values-content">
+            <div class="value-card">
+                <i class="fas fa-seedling"></i>
+                <h3>Sustainability</h3>
+                <p>We ensure eco-friendly practices in tea farming and production.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-leaf"></i>
+                <h3>Purity & Quality</h3>
+                <p>100% natural teas, free from additives, sourced from the best estates.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-hand-holding-heart"></i>
+                <h3>Community Support</h3>
+                <p>Empowering tea farmers through fair trade and ethical sourcing.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet the Team -->
+    <section class="about-team">
+        <h2>Meet Our Team</h2>
+        <div class="team-members">
+            <div class="team-card">
+                <img src="{% static 'images/team02.jpeg' %}" alt="CEO">
+                <h3>John Doe</h3>
+                <p>Founder & CEO</p>
+            </div>
+            <div class="team-card">
+                <img src="{% static 'images/team03.jpeg' %}" alt="Marketing Head">
+                <h3>Jane Smith</h3>
+                <p>Technical Head</p>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

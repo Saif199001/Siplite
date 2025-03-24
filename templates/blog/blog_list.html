@@ -1,0 +1,26 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block title %}Blog - Siplite Natural Teas{% endblock %}
+
+{% block page_content %}
+<div class="container py-5">
+    <h1 class="text-center mb-4">Our Tea Blogs</h1>
+    
+    <div class="row row-cols-md-3 row-cols-1 g-4">
+        {% for blog in blogs %}
+        <div class="col">
+            <div class="card blog-card shadow-sm">
+                <img src="{{ blog.image.url }}" class="card-img-top" alt="{{ blog.title }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ blog.title }}</h5>
+                    <p class="card-text">{{ blog.content|truncatewords:20 }}</p>
+                    <a href="{% url 'blog_detail' blog.slug %}" class="btn btn-outline-success">Read More</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-center text-muted">No blogs available yet.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

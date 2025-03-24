@@ -1,0 +1,52 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block title %}Shop All Products{% endblock %}
+
+{% block page_content %}
+<div class="container py-5">
+    <div class="row">
+        <!-- Sidebar (Categories) -->
+        <div class="col-md-3">
+            <h4>Categories</h4>
+            <ul class="list-group">
+                <li class="list-group-item {% if not selected_category %}active{% endif %}">
+                    <a href="{% url 'product_list' %}" class="text-decoration-none text-dark">All Products</a>
+                </li>
+                {% for category in categories %}
+                <li class="list-group-item {% if selected_category == category %}active{% endif %}">
+                    <a href="{% url 'category_products' category.slug %}" class="text-decoration-none text-dark">{{ category.name }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="col-md-9">
+            <h2 class="mb-4">
+                {% if selected_category %}
+                    {{ selected_category.name }} Products
+                {% else %}
+                    All Products
+                {% endif %}
+            </h2>
+
+            <div class="row row-cols-md-3 row-cols-1 g-4">
+                {% for product in products %}
+                <div class="col">
+                    <div class="card product-card shadow-sm">
+                        <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                            <p class="card-text">₹{{ product.price }}</p>
+                            <a href="{% url 'product_detail' product.slug %}" class="btn btn-success">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                <p class="text-muted">No products found.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

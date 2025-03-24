@@ -1,0 +1,44 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block page_content %}
+<div class="contact-container">
+    <div class="contact-image">
+        <img src="{% static 'images/contact.jpg' %}" alt="Contact Us - Tea Farming">
+    </div>
+
+    <div class="contact-content">
+        <h1>Contact Us</h1>
+        <p>Have questions? We'd love to hear from you!</p>
+        
+        <div class="contact-details">
+            <div class="contact-card">
+                <i class="fas fa-phone-alt"></i>
+                <h3>Phone</h3>
+                <p>+91 123 456 7890</p>
+            </div>
+            <div class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p>support@siplitenaturalteas.com</p>
+            </div>
+            <div class="contact-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Address</h3>
+                <p>123, Tea Estate Road, Darjeeling, India</p>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <h2>Send Us a Message</h2>
+            <form action="{% url 'contact' %}" method="POST">
+                {% csrf_token %}
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn btn-success">Send Message</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
