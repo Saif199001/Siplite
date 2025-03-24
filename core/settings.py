@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ihx+iwvc3s*!y)j=hy@1=fz81@$g&m4#$o#6)vjl3*#k$=9xt$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.siplitenaturalteas.in']
 
 
 # Application definition
