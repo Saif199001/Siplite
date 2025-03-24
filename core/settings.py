@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ihx+iwvc3s*!y)j=hy@1=fz81@$g&m4#$o#6)vjl3*#k$=9xt$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.siplitenaturalteas.in', 'siplitenaturalteas.in', 'siplite.onrender.com']
+ALLOWED_HOSTS = ['www.siplitenaturalteas.in', 'siplitenaturalteas.in', 'siplite.onrender.com', '127.0.0.1']
 
 
 # Application definition
@@ -131,9 +131,9 @@ USE_TZ = True
 #STATIC_URL = '/static/'
 #STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Collects static files here
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
