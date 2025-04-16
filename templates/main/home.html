@@ -5,15 +5,87 @@
 {% block page_content %}
 
 <!-- Hero Section -->
-<section class="hero-section text-center text-white d-flex align-items-center justify-content-center" style="background: url({% static 'images/banner04.jpg' %}) center/cover no-repeat; height: 80vh; position: relative;">
-    <div class="overlay"></div>
-    <div class="container position-relative z-2">
-        <h1 class="display-4 fw-bold">India's Most Innovative Tea Company</h1>
-        <p class="lead">Sourced from the best tea gardens, crafted for perfection.</p>
-        <a href="{% url 'product_list' %}" class="btn btn-success btn-lg me-2">Explore Teas</a>
-        <a href="{% url 'contact' %}" class="btn btn-outline-light btn-lg">Contact Us</a>
+<!-- Hero Section with Carousel -->
+<div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+  
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <section class="hero-section d-flex align-items-center" style="background: url({% static 'images/banner04.jpg' %}) center/cover no-repeat; height: 80vh;">
+          <div class="overlay"></div>
+          <div class="container position-relative z-2 text-start text-white">
+            <div class="row">
+              <div class="col-md-6">
+                <h1 class="display-4 fw-bold">India's Most Innovative Tea Company</h1>
+                <p class="lead">Sourced from the best tea gardens, crafted for perfection.</p>
+                <a href="{% url 'product_list' %}" class="btn btn-success btn-lg me-2">Explore Teas</a>
+                <a href="{% url 'contact' %}" class="btn btn-outline-light btn-lg">Contact Us</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+  
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <section class="hero-section d-flex align-items-center" style="background: url({% static 'images/crousel1.jpg' %}) center/cover no-repeat; height: 80vh;">
+          <div class="overlay"></div>
+          <div class="container position-relative z-2 text-start text-white">
+            <div class="row">
+              <div class="col-md-6">
+                <h1 class="display-4 fw-bold">Flavours You've Never Sipped Before</h1>
+                <p class="lead">Enjoy unique blends like Paan, Rose, Masala, and more.</p>
+                <a href="{% url 'product_list' %}" class="btn btn-success btn-lg me">Shop Now</a>
+                <a href="{% url 'contact' %}" class="btn btn-outline-light btn-lg">Contact Sales</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <section class="hero-section d-flex align-items-center" style="background: url({% static 'images/Banner06.jpg' %}) center/cover no-repeat; height: 80vh;">
+          <div class="overlay"></div>
+          <div class="container position-relative z-2 text-start text-white">
+            <div class="row">
+              <div class="col-md-6">
+                <h1 class="display-4 fw-bold">Where Flowers Heal & Herbs Speak</h1>
+                <p class="lead">Blue Blossom | Rose Revival | Gut Balance</p>
+                <a href="{% url 'product_list' %}" class="btn btn-success btn-lg me">Shop Now</a>
+                <a href="{% url 'contact' %}" class="btn btn-outline-light btn-lg">Contact Sales</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- Slide 4 -->
+      <div class="carousel-item">
+        <section class="hero-section d-flex align-items-center" style="background: url({% static 'images/banner02.jpg' %}) center/cover no-repeat; height: 80vh;">
+          <div class="overlay"></div>
+          <div class="container position-relative z-2 text-start text-white">
+            <div class="row">
+              <div class="col-md-6">
+                <h1 class="display-4 fw-bold">Authentic Herbal & Flavored Teas</h1>
+                <p class="lead">Enjoy unique blends like Paan, Rose, Masala, and more.</p>
+                <a href="{% url 'product_list' %}" class="btn btn-success btn-lg me">Shop Now</a>
+                <a href="{% url 'contact' %}" class="btn btn-outline-light btn-lg">Contact Sales</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+  
     </div>
-</section>
+  
+    <!-- Carousel Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+  
 
 <!-- Retail Tea Categories -->
 <section class="container py-5">
